@@ -1,3 +1,15 @@
+/**
+ * Control class will assing controls to the car
+ * Controls are:
+ *      - Forward
+ *      - Backward
+ *      - Left
+ *      - Right
+ * 
+ * When the class is initialized, controls are assigned to the arrow keys
+ * onkeyup and onkeydown evets are captured and state of controls will be changed
+ */
+
 class Controls {
     constructor() {
         this.forward = false;
