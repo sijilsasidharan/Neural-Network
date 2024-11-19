@@ -1,6 +1,6 @@
 const canvas = document.getElementById('carCanvas');
 canvas.height = window.innerHeight;
-canvas.width = 200;
+canvas.width = 250;
 
 const ctx = canvas.getContext('2d');
 
