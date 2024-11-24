@@ -77,7 +77,7 @@ class Car {
 
         ctx.beginPath();
         ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
-        ctx.fillStyle ='black';
+        ctx.fillStyle ='violet';
         ctx.fill();
         
         ctx.restore()

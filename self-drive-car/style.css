@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    background: green;
+    background-color: rgb(60, 187, 48);
     overflow:hidden;
     text-align:center;
 }
 
 #carCanvas {
     height: 100%;
-    background-color: teal;
+    background-color: rgba(71, 72, 76);
 }
