@@ -20,10 +20,13 @@ class Car {
         this.angle = 0;
 
         this.controls = new Controls();
+
+        this.sensor = new Sensor(this);
     }
 
     update() {
         this.#move();
+        this.sensor.update();
     }
 
     #move() {
@@ -77,9 +80,11 @@ class Car {
 
         ctx.beginPath();
         ctx.rect(-this.width / 2, -this.height / 2, this.width, this.height);
-        ctx.fillStyle ='violet';
+        ctx.fillStyle ='black';
         ctx.fill();
+
+        ctx.restore();
         
-        ctx.restore()
+        this.sensor.draw(ctx);
     }
 }
