@@ -29,7 +29,7 @@ class Sensor {
             );
         }
 
-        // console.log(this.readings)
+        console.log(this.readings)
 
     }
 
@@ -42,9 +42,8 @@ class Sensor {
                 roadBoarders[i][0],
                 roadBoarders[i][1]
             );
-            console.log(touch)
             if (touch) {
-                touches.push(touches);
+                touches.push(touch);
             }
         }
 
@@ -80,7 +79,6 @@ class Sensor {
             let end = this.rays[i][1];
             // if there is a reading, end should be the reading
             if (this.readings[i]) {
-                console.log(this.readings[i])
                 end = this.readings[i]
             }
             ctx.beginPath();
@@ -96,7 +94,7 @@ class Sensor {
                 end.x,
                 end.y
             );
-            ctx.stroke()
+            ctx.stroke();
         }
     }
 }
