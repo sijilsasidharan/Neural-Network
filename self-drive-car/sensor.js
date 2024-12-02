@@ -95,6 +95,18 @@ class Sensor {
                 end.y
             );
             ctx.stroke();
+            ctx.beginPath();
+            ctx.lineWidth=2;
+            ctx.strokeStyle='black';
+            ctx.moveTo(
+                end.x,
+                end.y
+            );
+            ctx.lineTo(
+                this.rays[i][1].x,
+                this.rays[i][1].y
+            );
+            ctx.stroke();
         }
     }
 }
