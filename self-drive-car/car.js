@@ -31,6 +31,7 @@ class Car {
 
   #createPolygon() {
     const pointes = [];
+    const rad = Math.hypot(this.width, this.height) / 2;
   }
 
   #move() {
