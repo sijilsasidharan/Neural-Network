@@ -31,6 +31,10 @@ function polyIntersect(poly1, poly2) {
         poly2[j],
         poly2[(j + 1) % poly1.length]
       );
+      if (touch) {
+        return true;
+      }
     }
   }
+  return false;
 }
