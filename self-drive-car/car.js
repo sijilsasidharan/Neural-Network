@@ -21,15 +21,29 @@ class Car {
 
     this.polygon = [];
 
+    this.damaged = false;
+
     this.controls = new Controls();
 
     this.sensor = new Sensor(this);
   }
 
   update(roadBorders) {
-    this.#move();
-    this.polygon = this.#createPolygon();
+    if (!this.damaged) {
+      this.#move();
+      this.polygon = this.#createPolygon();
+      this.damaged = this.#assessDamage(roadBorders);
+    }
     this.sensor.update(roadBorders);
+  }
+
+  #assessDamage(roadBorders) {
+    for (let i = 0; i < roadBorders.length; i++) {
+      if (polyIntersect(this.polygon, roadBorders[i])) {
+        return true;
+      }
+    }
+    return false;
   }
 
   #createPolygon() {
