@@ -9,3 +9,8 @@
 ![alt text](images/image.png)
 
 ## phase 2
+
+- Damage detection
+- Traffic Implementation
+
+![alt text](images/image.png)
