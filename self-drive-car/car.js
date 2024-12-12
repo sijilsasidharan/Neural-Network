@@ -29,13 +29,13 @@ class Car {
     this.controls = new Controls(controlType);
   }
 
-  update(roadBorders) {
+  update(roadBorders, traffics) {
     if (!this.damaged) {
       this.#move();
       this.polygon = this.#createPolygon();
       this.damaged = this.#assessDamage(roadBorders);
     }
-    this.sensor?.update(roadBorders);
+    this.sensor?.update(roadBorders, traffics);
   }
 
   #assessDamage(roadBorders) {
