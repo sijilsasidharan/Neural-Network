@@ -12,5 +12,6 @@
 
 - Damage detection
 - Traffic Implementation
+- Car color change
 
 ![alt text](images/image.png)
