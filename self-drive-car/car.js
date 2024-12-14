@@ -23,6 +23,8 @@ class Car {
 
     this.damaged = false;
 
+    this.controlType = controlType;
+
     if (controlType !== "DUMMY") {
       this.sensor = new Sensor(this);
     }
@@ -33,19 +35,20 @@ class Car {
     if (!this.damaged) {
       this.#move();
       this.polygon = this.#createPolygon();
-      this.damaged = this.#assessDamage(roadBorders);
+      this.damaged = this.#assessDamage(roadBorders, traffics);
     }
     this.sensor?.update(roadBorders, traffics);
   }
 
-  #assessDamage(roadBorders) {
+  #assessDamage(roadBorders, traffics) {
     for (let i = 0; i < roadBorders.length; i++) {
       if (polyIntersect(this.polygon, roadBorders[i])) {
+        console.log(`roadBorders - ${this.controlType} = ${this.damaged}`);
         return true;
       }
     }
-    for (let i = 0; i < traffic.length; i++) {
-      if (polyIntersect(this.polygon, traffic[i].polygon)) {
+    for (let i = 0; i < traffics.length; i++) {
+      if (polyIntersect(this.polygon, traffics[i].polygon)) {
         return true;
       }
     }
