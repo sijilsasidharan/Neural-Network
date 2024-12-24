@@ -19,5 +19,9 @@ class Level {
         level.weights[i][j] = Math.random() * 2 - 1;
       }
     }
+
+    for (let i = 0; i < level.basises.length; i++) {
+      level.basises[i] = Math.random() * 2 - 1;
+    }
   }
 }
