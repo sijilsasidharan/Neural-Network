@@ -24,4 +24,12 @@ class Level {
       level.basises[i] = Math.random() * 2 - 1;
     }
   }
+
+  static feedForward(givenInputs, level) {
+    for (let i = 0; i < level.inputs.length; i++) {
+      level.inputs[i] = givenInputs[i];
+    }
+
+    // for (let i = 0)
+  }
 }
