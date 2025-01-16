@@ -3,6 +3,14 @@ class Edge {
     this.p1 = p1;
     this.p2 = p2;
   }
+
+  equals(edge) {
+    return (
+      (this.p1.equals(edge.p1) && this.p2.equals(edge.p2)) ||
+      (this.p1.equals(edge.p2) && this.p2.equals(edge.p1))
+    );
+  }
+
   draw(ctx, width = 2, color = "black") {
     ctx.beginPath();
     ctx.lineWidth = width;
