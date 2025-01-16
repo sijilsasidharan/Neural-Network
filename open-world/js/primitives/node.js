@@ -4,6 +4,10 @@ class Node {
     this.y = y;
   }
 
+  equals(node) {
+    return this.x === node.x && this.y === node.y;
+  }
+
   draw(ctx, size = 18, color = "black") {
     const radius = size / 2;
     ctx.beginPath();
