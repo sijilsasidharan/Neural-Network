@@ -4,25 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+      }
+      #myCanvas {
+        border: 1px solid black;
+        background-color: #2a5;
+      }
+    </style>
   </head>
   <body>
-    <canvas id="mycanvas"></canvas>
+    <canvas id="myCanvas"></canvas>
     <script src="./js/primitives/edge.js"></script>
     <script src="./js/primitives/node.js"></script>
     <script src="./js/math/Graph.js"></script>
     <script>
-      myCanvas = document.getElementById("mycanvas");
-      mycanvas.widht = 600;
+      mycanvas = document.getElementById("myCanvas");
+      mycanvas.width = 600;
       mycanvas.height = 600;
 
       const ctx = myCanvas.getContext("2d");
 
       const p1 = new Node(200, 200);
       const p2 = new Node(400, 200);
-      const p3 = new Node(500, 400);
+      const p3 = new Node(300, 400);
       const p4 = new Node(100, 300);
 
-      const graph = new Graph([p1, p2, p3, p4]);
+      const s1 = new Edge(p1, p2);
+      const s2 = new Edge(p1, p3);
+      const s3 = new Edge(p1, p4);
+      const s4 = new Edge(p2, p3);
+
+      const graph = new Graph([p1, p2, p3, p4], [s1, s2, s3, s4]);
       graph.draw(ctx);
     </script>
   </body>
