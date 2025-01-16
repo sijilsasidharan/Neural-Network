@@ -15,12 +15,15 @@
       mycanvas.widht = 600;
       mycanvas.height = 600;
 
+      const ctx = myCanvas.getContext("2d");
+
       const p1 = new Node(200, 200);
       const p2 = new Node(400, 200);
       const p3 = new Node(500, 400);
       const p4 = new Node(100, 300);
 
       const graph = new Graph([p1, p2, p3, p4]);
+      graph.draw(ctx);
     </script>
   </body>
 </html>
