@@ -24,6 +24,7 @@
     <canvas id="myCanvas"></canvas>
     <div id="controls">
       <button id="addNode" onclick="addRandomNode()">Add Node</button>
+      <button id="removeNode" onclick="removeRandomNode()">Remove Node</button>
       <button id="addEdge" onclick="addRandomEdge()">Add Edge</button>
       <button id="removeNode" onclick="removeRandomEdge()">Remove Edge</button>
     </div>
@@ -59,6 +60,13 @@
         if (graph.tryAddNode(p)) {
           console.log("Added node");
         }
+        ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
+        graph.draw(ctx);
+      }
+
+      function removeRandomNode() {
+        const p = graph.nodes[Math.floor(Math.random() * graph.nodes.length)];
+        graph.removeNode(p);
         ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
         graph.draw(ctx);
       }

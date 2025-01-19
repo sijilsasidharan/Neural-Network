@@ -8,6 +8,16 @@ class Graph {
     this.nodes.push(node);
   }
 
+  removeNode(node) {
+    const edges = this.edges.filter(
+      (edge) => edge.p1.equals(node) || edge.p2.equals(node)
+    );
+    for (const edge of edges) {
+      this.removeEdge(edge);
+    }
+    this.nodes.splice(this.nodes.indexOf(node), 1);
+  }
+
   containesNode(node) {
     return this.nodes.find((n) => n.equals(node));
   }
