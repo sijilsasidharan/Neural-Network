@@ -50,6 +50,11 @@ class Graph {
     return false;
   }
 
+  dispose() {
+    this.nodes = [];
+    this.edges = [];
+  }
+
   draw(ctx) {
     for (const edge of this.edges) {
       edge.draw(ctx);

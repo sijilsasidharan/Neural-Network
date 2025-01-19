@@ -27,11 +27,17 @@
       <button id="removeNode" onclick="removeRandomNode()">Remove Node</button>
       <button id="addEdge" onclick="addRandomEdge()">Add Edge</button>
       <button id="removeNode" onclick="removeRandomEdge()">Remove Edge</button>
+      <button id="removeNode" onclick="removeAll()">Remove All</button>
     </div>
     <script src="./js/primitives/edge.js"></script>
     <script src="./js/primitives/node.js"></script>
     <script src="./js/math/Graph.js"></script>
     <script>
+      function removeAll() {
+        graph.dispose();
+        ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
+        graph.draw(ctx);
+      }
       function addRandomEdge() {
         const n1 = graph.nodes[Math.floor(Math.random() * graph.nodes.length)];
         const n2 = graph.nodes[Math.floor(Math.random() * graph.nodes.length)];
