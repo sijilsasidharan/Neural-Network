@@ -24,8 +24,12 @@ class Graph {
     this.edges.push(edge);
   }
 
+  removeEdge(edge) {
+    this.edges.splice(this.edges.indexOf(edge), 1);
+  }
+
   containesEdge(edge) {
-    return this.edges.find((n) => n.equals(edge));
+    return this.edges.find((e) => e.equals(edge));
   }
 
   tryAddEdge(edge) {
