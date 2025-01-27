@@ -41,8 +41,10 @@ class GraphEditor {
 
   #removeNode(node) {
     this.graph.removeNode(node);
-    this.selected = null;
     this.hovered = null;
+    if (this.selected === node) {
+      this.selected = null;
+    }
   }
 
   display() {
