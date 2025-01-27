@@ -35,6 +35,10 @@ class GraphEditor {
     this.canvas.addEventListener("mousemove", (e) => {
       const mouse = new Node(e.offsetX, e.offsetY);
       this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
+      if (this.dragging) {
+        this.selected.x = mouse.x;
+        this.selected.y = mouse.y;
+      }
     });
     this.canvas.addEventListener("contextmenu", (e) => {
       e.preventDefault();
