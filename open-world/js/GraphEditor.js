@@ -43,6 +43,9 @@ class GraphEditor {
     this.canvas.addEventListener("contextmenu", (e) => {
       e.preventDefault();
     });
+    this.canvas.addEventListener("mouseup", () => {
+      this.dragging = false;
+    });
   }
 
   #removeNode(node) {
