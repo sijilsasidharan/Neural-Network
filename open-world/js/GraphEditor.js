@@ -24,11 +24,13 @@ class GraphEditor {
         const mouse = new Node(e.offsetX, e.offsetY);
         // this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
         if (this.hovered) {
+          this.#select(this.hovered);
           this.selected = this.hovered;
           this.dragging = true;
           return;
         }
         this.graph.addNode(mouse);
+        this.#select(mouse);
         this.selected = mouse;
       }
     });
@@ -46,6 +48,13 @@ class GraphEditor {
     this.canvas.addEventListener("mouseup", () => {
       this.dragging = false;
     });
+  }
+
+  #select(mouse) {
+    if (this.selected) {
+      this.graph.tryAddEdge(new Edge(this.selected, mouse));
+    }
+    this.selected = mouse;
   }
 
   #removeNode(node) {
