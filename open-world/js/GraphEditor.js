@@ -6,6 +6,7 @@ class GraphEditor {
     this.selected = null;
     this.hovered = null;
     this.dragging = false;
+    this.mouse = null;
 
     this.ctx = this.canvas.getContext("2d");
 
@@ -35,7 +36,7 @@ class GraphEditor {
       }
     });
     this.canvas.addEventListener("mousemove", (e) => {
-      const mouse = new Node(e.offsetX, e.offsetY);
+      this.mouse = new Node(e.offsetX, e.offsetY);
       this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
       if (this.dragging) {
         this.selected.x = mouse.x;
@@ -71,6 +72,7 @@ class GraphEditor {
       this.hovered.draw(this.ctx, { fill: true });
     }
     if (this.selected) {
+      new Edge(this.selected, this.mouse).draw(this.ctx);
       this.selected.draw(this.ctx, { outline: true });
     }
   }
