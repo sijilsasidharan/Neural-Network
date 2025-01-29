@@ -22,7 +22,7 @@ class GraphEditor {
         return;
       }
       if (e.button === 0) {
-        const mouse = new Node(e.offsetX, e.offsetY);
+        this.mouse = new Node(e.offsetX, e.offsetY);
         // this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
         if (this.hovered) {
           this.#select(this.hovered);
@@ -30,17 +30,17 @@ class GraphEditor {
           this.dragging = true;
           return;
         }
-        this.graph.addNode(mouse);
-        this.#select(mouse);
-        this.selected = mouse;
+        this.graph.addNode(this.mouse);
+        this.#select(this.mouse);
+        this.selected = this.mouse;
       }
     });
     this.canvas.addEventListener("mousemove", (e) => {
       this.mouse = new Node(e.offsetX, e.offsetY);
-      this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
+      this.hovered = getNearestPoint(this.mouse, this.graph.nodes, 10);
       if (this.dragging) {
-        this.selected.x = mouse.x;
-        this.selected.y = mouse.y;
+        this.selected.x = this.mouse.x;
+        this.selected.y = this.mouse.y;
       }
     });
     this.canvas.addEventListener("contextmenu", (e) => {
@@ -72,7 +72,8 @@ class GraphEditor {
       this.hovered.draw(this.ctx, { fill: true });
     }
     if (this.selected) {
-      new Edge(this.selected, this.mouse).draw(this.ctx);
+      const intent = this.hovered ? this.hovered : this.mouse;
+      new Edge(this.selected, intent).draw(this.ctx, { dash: [3, 4] });
       this.selected.draw(this.ctx, { outline: true });
     }
   }
