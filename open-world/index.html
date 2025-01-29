@@ -33,6 +33,7 @@
     <script src="./js/primitives/node.js"></script>
     <script src="./js/math/utils.js"></script>
     <script src="./js/math/Graph.js"></script>
+    <script src="./js/viewport.js"></script>
     <script src="./js/GraphEditor.js"></script>
     <script>
       // function removeAll() {
@@ -96,6 +97,7 @@
       const s4 = new Edge(p2, p3);
 
       const graph = new Graph([p1, p2, p3, p4], [s1, s2, s3, s4]);
+      const viewport = new Viewport(mycanvas, graph);
       const graphEditor = new GraphEditor(mycanvas, graph);
       animate();
 
