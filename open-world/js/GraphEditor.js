@@ -30,7 +30,7 @@ class GraphEditor {
       }
     }
     if (e.button === 0) {
-      this.mouse = new Node(e.offsetX, e.offsetY);
+      // this.mouse = this.viewport.getMouse(e);
       // this.hovered = getNearestPoint(mouse, this.graph.nodes, 10);
       if (this.hovered) {
         this.#select(this.hovered);
@@ -47,7 +47,6 @@ class GraphEditor {
   #handleMouseMove(e) {
     // this.mouse = new Node(e.offsetX, e.offsetY);
     this.mouse = this.viewport.getMouse(e);
-    console.log(this.mouse);
     this.hovered = getNearestPoint(this.mouse, this.graph.nodes, 10);
     if (this.dragging) {
       this.selected.x = this.mouse.x;
