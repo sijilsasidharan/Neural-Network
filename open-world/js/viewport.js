@@ -28,12 +28,20 @@ class Viewport {
       this.#handleMouseWheel.bind(this)
     );
     this.canvas.addEventListener("mousedown", this.#handleMouseDown.bind(this));
+    this.canvas.addEventListener("mousemove", this.#handleMouseMove.bind(this));
   }
 
   #handleMouseDown(e) {
     if (e.button === 1) {
       this.drag.start = this.getMouse(e);
       this.drag.active = true;
+    }
+  }
+
+  #handleMouseMove(e) {
+    if (this.drag.active) {
+      this.drag.end = this.getMouse(e);
+      this.drag.offset = subract(this.drag.end, this.drag.start);
     }
   }
 
