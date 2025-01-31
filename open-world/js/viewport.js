@@ -8,6 +8,13 @@ class Viewport {
     this.zoom = 1;
     this.offset = new Node(0, 0);
 
+    this.drag = {
+      active: false,
+      start: new Node(0, 0),
+      end: new Node(0, 0),
+      offset: new Node(0, 0),
+    };
+
     this.#addEventListeners();
   }
 
