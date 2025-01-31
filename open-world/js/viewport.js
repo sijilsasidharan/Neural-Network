@@ -27,6 +27,14 @@ class Viewport {
       "mousewheel",
       this.#handleMouseWheel.bind(this)
     );
+    this.canvas.addEventListener("mousedown", this.#handleMouseDown.bind(this));
+  }
+
+  #handleMouseDown(e) {
+    if (e.button === 1) {
+      this.drag.start = this.getMouse(e);
+      this.drag.active = true;
+    }
   }
 
   #handleMouseWheel(e) {
