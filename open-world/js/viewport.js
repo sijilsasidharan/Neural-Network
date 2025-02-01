@@ -29,6 +29,7 @@ class Viewport {
     );
     this.canvas.addEventListener("mousedown", this.#handleMouseDown.bind(this));
     this.canvas.addEventListener("mousemove", this.#handleMouseMove.bind(this));
+    this.canvas.addEventListener("mouseup", this.#handleMouseUp.bind(this));
   }
 
   #handleMouseDown(e) {
@@ -42,6 +43,13 @@ class Viewport {
     if (this.drag.active) {
       this.drag.end = this.getMouse(e);
       this.drag.offset = subract(this.drag.end, this.drag.start);
+    }
+  }
+
+  #handleMouseUp(e) {
+    if (this.drag.active) {
+      this.offset = add(this.offset, this.drag.offset);
+      this.drag.active = false;
     }
   }
 

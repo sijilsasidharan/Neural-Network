@@ -12,3 +12,11 @@ function getNearestPoint(loc, points, threshold = Number.MAX_SAFE_INTEGER) {
 }
 
 const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+
+function add(p1, p2) {
+  return new Node(p1.x + p2.x, p1.y + p2.y);
+}
+
+function substract(p1, p2) {
+  return new Node(p1.x - p2.x, p1.y - p2.y);
+}
