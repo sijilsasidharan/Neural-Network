@@ -22,6 +22,10 @@ class Viewport {
     return new Node(e.offsetX * this.zoom, e.offsetY * this.zoom);
   }
 
+  getOffset(e) {
+    return add(this.offset, this.drag.offset);
+  }
+
   #addEventListeners() {
     this.canvas.addEventListener(
       "mousewheel",
@@ -42,7 +46,7 @@ class Viewport {
   #handleMouseMove(e) {
     if (this.drag.active) {
       this.drag.end = this.getMouse(e);
-      this.drag.offset = subract(this.drag.end, this.drag.start);
+      this.drag.offset = substract(this.drag.end, this.drag.start);
     }
   }
 
