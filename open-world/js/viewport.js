@@ -6,6 +6,7 @@ class Viewport {
     this.ctx = this.canvas.getContext("2d");
 
     this.zoom = 1;
+    this.center = new Point(canvas.width / 2, canvas.height / 2);
     this.offset = new Node(0, 0);
 
     this.drag = {
