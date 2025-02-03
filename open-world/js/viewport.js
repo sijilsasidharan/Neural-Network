@@ -6,7 +6,7 @@ class Viewport {
     this.ctx = this.canvas.getContext("2d");
 
     this.zoom = 1;
-    this.center = new Point(canvas.width / 2, canvas.height / 2);
+    this.center = new Node(canvas.width / 2, canvas.height / 2);
     // this.offset = new Node(0, 0);
     this.offset = scale(this.center, -1);
 
@@ -55,7 +55,13 @@ class Viewport {
   #handleMouseUp(e) {
     if (this.drag.active) {
       this.offset = add(this.offset, this.drag.offset);
-      this.drag.active = false;
+
+      this.drag = {
+        active: false,
+        start: new Node(0, 0),
+        end: new Node(0, 0),
+        offset: new Node(0, 0),
+      };
     }
   }
 
