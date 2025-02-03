@@ -21,7 +21,10 @@ class Viewport {
   }
 
   getMouse(e) {
-    return new Node(e.offsetX * this.zoom, e.offsetY * this.zoom);
+    return new Node(
+      (e.offsetX - this.center.x) * this.zoom - this.offset.x,
+      (e.offsetY - this.center.y) * this.zoom - this.offset.y
+    );
   }
 
   getOffset(e) {
