@@ -20,6 +20,8 @@ class Viewport {
     this.#addEventListeners();
   }
 
+  reset() {}
+
   getMouse(e, subtractDragOffset = false) {
     const node = new Node(
       (e.offsetX - this.center.x) * this.zoom - this.offset.x,
