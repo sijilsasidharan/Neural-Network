@@ -13,5 +13,6 @@
 ## phase 2
 
 - Zoom feature
+- Drag feature
 
 ![alt text](images/phase-1.png)
