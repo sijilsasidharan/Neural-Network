@@ -9,3 +9,9 @@
 - A preview edge will be shown when mouse moved
 
 ![alt text](images/phase-1.png)
+
+## phase 2
+
+- Zoom feature
+
+![alt text](images/phase-1.png)
