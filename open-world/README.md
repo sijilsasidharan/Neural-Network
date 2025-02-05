@@ -12,6 +12,7 @@
 
 ## phase 2
 
+- Remove preview on right click
 - Zoom feature
 - Drag feature
 - Positioning the mouse pointer on drag
