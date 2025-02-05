@@ -14,5 +14,4 @@
 
 - Zoom feature
 - Drag feature
-
-![alt text](images/phase-1.png)
+- Positioning the mouse pointer on drag
