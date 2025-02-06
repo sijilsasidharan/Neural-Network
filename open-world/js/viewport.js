@@ -20,7 +20,15 @@ class Viewport {
     this.#addEventListeners();
   }
 
-  reset() {}
+  reset() {
+    ctx.restore();
+    ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
+    ctx.save();
+    ctx.translate(viewport.center.x, viewport.center.y);
+    ctx.scale(1 / viewport.zoom, 1 / viewport.zoom);
+    const offset = viewport.getOffset();
+    ctx.translate(offset.x, offset.y);
+  }
 
   getMouse(e, subtractDragOffset = false) {
     const node = new Node(
