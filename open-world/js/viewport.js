@@ -21,13 +21,13 @@ class Viewport {
   }
 
   reset() {
-    ctx.restore();
-    ctx.clearRect(0, 0, mycanvas.width, mycanvas.height);
-    ctx.save();
-    ctx.translate(viewport.center.x, viewport.center.y);
-    ctx.scale(1 / viewport.zoom, 1 / viewport.zoom);
+    this.ctx.restore();
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.save();
+    this.ctx.translate(this.center.x, this.center.y);
+    this.ctx.scale(1 / this.zoom, 1 / this.zoom);
     const offset = viewport.getOffset();
-    ctx.translate(offset.x, offset.y);
+    this.ctx.translate(offset.x, offset.y);
   }
 
   getMouse(e, subtractDragOffset = false) {
