@@ -26,7 +26,7 @@ class Viewport {
     this.ctx.save();
     this.ctx.translate(this.center.x, this.center.y);
     this.ctx.scale(1 / this.zoom, 1 / this.zoom);
-    const offset = viewport.getOffset();
+    const offset = this.getOffset();
     this.ctx.translate(offset.x, offset.y);
   }
 
