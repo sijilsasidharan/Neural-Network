@@ -17,3 +17,4 @@
 - Drag feature
 - Positioning the mouse pointer on drag
 - dispose the graph
+- save the graph
