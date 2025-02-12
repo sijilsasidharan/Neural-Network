@@ -4,6 +4,16 @@ class Graph {
     this.edges = edges;
   }
 
+  static load(info) {
+    const nodes = info.nodes.map((node) => new Node(node.x, node.y));
+    const edges = info.edges.map((edge) => {
+      const p1 = nodes.find((p) => p.equals(edge.p1));
+      const p2 = nodes.find((p) => p.equals(edge.p2));
+      return new Edge(p1, p2);
+    });
+    return new Graph(nodes, edges);
+  }
+
   addNode(node) {
     this.nodes.push(node);
   }
