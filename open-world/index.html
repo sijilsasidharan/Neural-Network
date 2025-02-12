@@ -104,7 +104,9 @@
 
       const graphString = localStorage.getItem("graph");
       const graphInfo = graphString ? JSON.parse(graphString) : null;
-      const graph = graphInfo ? new Graph(graphInfo) : new Graph();
+      const graph = graphInfo
+        ? new Graph(graphInfo.nodes, graphInfo.edge)
+        : new Graph();
       // const graph = new Graph(graphInfo);
       const viewport = new Viewport(mycanvas, graph);
       const graphEditor = new GraphEditor(viewport, graph);
