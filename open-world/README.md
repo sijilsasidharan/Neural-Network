@@ -18,3 +18,6 @@
 - Positioning the mouse pointer on drag
 - dispose the graph
 - save the graph
+
+## phase 2
+- Add polygon around the drawn nodes to represent road
