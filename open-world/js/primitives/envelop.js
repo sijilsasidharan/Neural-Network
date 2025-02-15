@@ -7,32 +7,15 @@ class Envelop {
   }
 
   #createPoly() {
-    const poly = [];
+    const { p1, p2 } = this.skeleton;
 
-    for (let i = 0; i < this.skeleton.length; i++) {
-      const v1 = this.skeleton[i];
-      const v2 = this.skeleton[(i + 1) % this.skeleton.length];
+    const radius = this.width / 2;
+    const alpha = Math.atan2(p2.y - p1.y, p2.x - p1.x);
 
-      const dx = v2.x - v1.x;
-      const dy = v2.y - v1.y;
-      const len = Math.sqrt(dx * dx + dy * dy);
-
-      const nx = dy / len;
-      const ny = -dx / len;
-
-      const p1 = {
-        x: v1.x + nx * this.width,
-        y: v1.y + ny * this.width,
-      };
-
-      const p2 = {
-        x: v2.x + nx * this.width,
-        y: v2.y + ny * this.width,
-      };
-
-      poly.push(p1);
-      poly.push(p2);
-    }
+    // clock wise
+    const alpha_cw = alpha + Math.PI / 2;
+    // counter clock wise
+    const alpha_ccw = alpha + Math.PI / 2;
 
     return new Polygon(poly);
   }
