@@ -36,6 +36,7 @@
     <script src="./js/primitives/edge.js"></script>
     <script src="./js/primitives/node.js"></script>
     <script src="./js/primitives/polygon.js"></script>
+    <script src="./js/primitives/envelop.js"></script>
     <script src="./js/math/utils.js"></script>
     <script src="./js/math/Graph.js"></script>
     <script src="./js/viewport.js"></script>
@@ -115,7 +116,8 @@
       function animate() {
         viewport.reset();
         graphEditor.display();
-        new Polygon(graph.nodes).draw(ctx);
+        // new Polygon(graph.nodes).draw(ctx);
+        new Envelope(graph.nodes, 80).draw(ctx);
         requestAnimationFrame(animate);
       }
 
