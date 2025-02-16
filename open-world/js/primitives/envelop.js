@@ -23,13 +23,18 @@ class Envelop {
     const p1_cw = translate(p1, alpha_cw, radius);
 
     const points = [];
-    const step = Math.PI / 3;
+    const step = Math.PI / 10;
 
     for (let i = alpha_ccw; i <= alpha_cw; i += step) {
       points.push(translate(p1, i, radius));
     }
 
-    return new Polygon([p1_ccw, p2_ccw, p2_cw, p1_cw]);
+    for (let i = alpha_ccw; i <= alpha_cw; i += step) {
+      points.push(translate(p2, Math.PI + i, radius));
+    }
+
+    // return new Polygon([p1_ccw, p2_ccw, p2_cw, p1_cw]);
+    return new Polygon(points);
   }
 
   draw(ctx) {
