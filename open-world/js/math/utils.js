@@ -24,3 +24,14 @@ function subtract(p1, p2) {
 function scale(p, s) {
   return new Node(p.x * s, p.y * s);
 }
+
+function translate(loc, angle, offset) {
+  return new Node(
+    loc.x + offset * Math.cos(angle),
+    loc.y + offset * Math.sin(angle)
+  );
+}
+
+function angle(p) {
+  return Math.atan2(p.y, p.x);
+}

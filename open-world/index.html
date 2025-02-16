@@ -117,7 +117,7 @@
         viewport.reset();
         graphEditor.display();
         // new Polygon(graph.nodes).draw(ctx);
-        new Envelope(graph.nodes, 80).draw(ctx);
+        new Envelop(graph.edges[0], 80).draw(ctx);
         requestAnimationFrame(animate);
       }
 
