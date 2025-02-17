@@ -8,5 +8,10 @@ class World {
     this.generate();
   }
 
-  generate() {}
+  generate() {
+    this.envolop.length = 0;
+    this.envolop = this.graph.edges.map((edge) => {
+      return new Envelop(edge, this.roadWidth, this.roadRoundness);
+    });
+  }
 }
