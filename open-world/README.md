@@ -21,3 +21,4 @@
 
 ## phase 2
 - Add polygon around the drawn nodes to represent road
+- Add polygon around road
