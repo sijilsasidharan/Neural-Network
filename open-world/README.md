@@ -19,7 +19,7 @@
 - dispose the graph
 - save the graph
 
-## phase 2
+## phase 3
 - Add polygon around the drawn nodes to represent road
 - Add envelop
-- 
+- Add World
