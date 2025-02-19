@@ -14,4 +14,10 @@ class World {
       return new Envelop(edge, this.roadWidth, this.roadRoundness);
     });
   }
+
+  darw(ctx) {
+    for (const env of this.envolop) {
+      env.draw(ctx);
+    }
+  }
 }
