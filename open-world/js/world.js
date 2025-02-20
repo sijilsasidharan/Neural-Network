@@ -19,5 +19,8 @@ class World {
     for (const env of this.envolop) {
       env.draw(ctx);
     }
+    for (const int of this.envolop) {
+      int.draw(ctx);
+    }
   }
 }
