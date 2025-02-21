@@ -2,6 +2,11 @@ class Polygon {
   constructor(nodes) {
     this.nodes = nodes;
     this.segments = [];
+    for (let i = 0; i < this.nodes.length; i++) {
+      this.segments.push(
+        new Segment(this.nodes[i - 1], this.nodes[i % this.nodes.length])
+      );
+    }
   }
 
   draw(
