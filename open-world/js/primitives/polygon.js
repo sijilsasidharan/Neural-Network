@@ -1,6 +1,7 @@
 class Polygon {
   constructor(nodes) {
     this.nodes = nodes;
+    this.segments = [];
   }
 
   draw(
