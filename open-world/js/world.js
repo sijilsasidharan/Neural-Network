@@ -15,7 +15,7 @@ class World {
     });
   }
 
-  darw(ctx) {
+  draw(ctx) {
     for (const env of this.envolop) {
       env.draw(ctx);
     }
