@@ -111,14 +111,17 @@
       // const graph = new Graph(graphInfo);
       const viewport = new Viewport(mycanvas, graph);
       const graphEditor = new GraphEditor(viewport, graph);
+      const world = new World(graph);
 
       animate();
 
       function animate() {
         viewport.reset();
+        world.generate();
+        world.draw(ctx);
         graphEditor.display();
         // new Polygon(graph.nodes).draw(ctx);
-        new Envelop(graph.edges[0], 80).draw(ctx);
+        // new Envelop(graph.edges[0], 80).draw(ctx);
         requestAnimationFrame(animate);
       }
 
