@@ -17,10 +17,10 @@ class Envelop {
     // counter clock wise
     const alpha_ccw = alpha - Math.PI / 2;
 
-    const p1_ccw = translate(p1, alpha_ccw, radius);
-    const p2_ccw = translate(p2, alpha_ccw, radius);
-    const p2_cw = translate(p2, alpha_cw, radius);
-    const p1_cw = translate(p1, alpha_cw, radius);
+    // const p1_ccw = translate(p1, alpha_ccw, radius);
+    // const p2_ccw = translate(p2, alpha_ccw, radius);
+    // const p2_cw = translate(p2, alpha_cw, radius);
+    // const p1_cw = translate(p1, alpha_cw, radius);
 
     const points = [];
     const step = Math.PI / Math.max(1, roundness);
