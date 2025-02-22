@@ -1,10 +1,10 @@
 class Polygon {
   constructor(nodes) {
     this.nodes = nodes;
-    this.segments = [];
+    this.edges = [];
     for (let i = 0; i < this.nodes.length; i++) {
-      this.segments.push(
-        new Segment(this.nodes[i - 1], this.nodes[i % this.nodes.length])
+      this.edges.push(
+        new Edge(this.nodes[i - 1], this.nodes[i % this.nodes.length])
       );
     }
   }
