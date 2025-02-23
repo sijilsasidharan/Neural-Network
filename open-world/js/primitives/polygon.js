@@ -9,6 +9,26 @@ class Polygon {
     }
   }
 
+  static break(poly1, poly2) {
+    const edge1 = poly1.edges;
+    const edge2 = poly2.edges;
+    const intersections = [];
+    for (let i = 0; i < edge1.length; i++) {
+      for (let j = 0; j < edge2.length; j++) {
+        const touch = getIntersection(
+          edge1[i].p1,
+          edge1[i].p2,
+          edge2[j].p1,
+          edge2[j].p2
+        );
+        if (touch && touch.offset != 0 && touch.offset != 0) {
+          intersections.push(touch);
+        }
+      }
+    }
+    return intersections;
+  }
+
   draw(
     ctx,
     { stroke = "blue", lineWidth = 2, fill = "rgba(0, 0, 255, 0.1)" } = {}
