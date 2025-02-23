@@ -4,6 +4,7 @@ class World {
     this.roadWidth = roadWidth;
     this.roadRoundness = roadRoundness;
 
+    this.intersections = [];
     this.envolop = [];
     this.generate();
   }
@@ -13,13 +14,18 @@ class World {
     this.envolop = this.graph.edges.map((edge) => {
       return new Envelop(edge, this.roadWidth, this.roadRoundness);
     });
+
+    // this.intersections = Polygon.break(
+    //   this.envolop[0].poly,
+    //   this.envolop[1].poly
+    // );
   }
 
   draw(ctx) {
     for (const env of this.envolop) {
       env.draw(ctx);
     }
-    for (const int of this.envolop) {
+    for (const int of this.intersections) {
       int.draw(ctx);
     }
   }
