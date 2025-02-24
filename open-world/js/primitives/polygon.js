@@ -2,7 +2,7 @@ class Polygon {
   constructor(nodes) {
     this.nodes = nodes;
     this.edges = [];
-    for (let i = 0; i < this.nodes.length; i++) {
+    for (let i = 1; i < this.nodes.length; i++) {
       this.edges.push(
         new Edge(this.nodes[i - 1], this.nodes[i % this.nodes.length])
       );
@@ -22,7 +22,8 @@ class Polygon {
           edge2[j].p2
         );
         if (touch && touch.offset != 0 && touch.offset != 0) {
-          intersections.push(touch);
+          const point = new Node(touch.x, touch.y);
+          intersections.push(point);
         }
       }
     }
