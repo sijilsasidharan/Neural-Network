@@ -15,10 +15,10 @@ class World {
       return new Envelop(edge, this.roadWidth, this.roadRoundness);
     });
 
-    // this.intersections = Polygon.break(
-    //   this.envolop[0].poly,
-    //   this.envolop[1].poly
-    // );
+    this.intersections = Polygon.break(
+      this.envolop[0].poly,
+      this.envolop[1].poly
+    );
   }
 
   draw(ctx) {
@@ -26,7 +26,7 @@ class World {
       env.draw(ctx);
     }
     for (const int of this.intersections) {
-      int.draw(ctx);
+      int.draw(ctx, { color: "red", size: 6 });
     }
   }
 }
