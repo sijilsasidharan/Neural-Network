@@ -23,5 +23,6 @@
 - Add polygon around the drawn nodes to represent road
 - Add envelop
 - Add World
+- Intersection of polygons
 
 ![alt text](images/phase-3.png)
