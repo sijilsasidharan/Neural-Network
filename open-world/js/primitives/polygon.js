@@ -21,7 +21,7 @@ class Polygon {
           edge2[j].p1,
           edge2[j].p2
         );
-        if (touch && touch.offset != 0 && touch.offset != 0) {
+        if (touch && touch.offset != 1 && touch.offset != 0) {
           const point = new Node(touch.x, touch.y);
           intersections.push(point);
         }
