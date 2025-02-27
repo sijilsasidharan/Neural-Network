@@ -39,5 +39,6 @@ class Envelop {
 
   draw(ctx) {
     this.poly.draw(ctx);
+    this.poly.drawSegments(ctx);
   }
 }
