@@ -36,6 +36,12 @@ class Polygon {
     return intersections;
   }
 
+  drawSegments(ctx) {
+    for (const edge of this.edges) {
+      edge.draw(ctx, { color: getRandomColor() });
+    }
+  }
+
   draw(
     ctx,
     { stroke = "blue", lineWidth = 2, fill = "rgba(0, 0, 255, 0.1)" } = {}
