@@ -57,3 +57,7 @@ function getIntersection(A, B, C, D) {
 
   return null;
 }
+
+function getRandomColor() {
+  return `hsl(${290 + Math.random() * 260}, 100%, 60%)`;
+}
