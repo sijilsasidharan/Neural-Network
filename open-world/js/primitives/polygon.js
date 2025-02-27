@@ -24,6 +24,12 @@ class Polygon {
         if (touch && touch.offset != 1 && touch.offset != 0) {
           const point = new Node(touch.x, touch.y);
           intersections.push(point);
+          let aux = edge1[i].p2;
+          edge1[i].p2 = point;
+          edge1.splice(i + 1, 0, new Edge(point, aux));
+          aux = edge2[j].p2;
+          edge1[j].p2 = point;
+          edge1.splice(j + 1, 0, new Edge(point, aux));
         }
       }
     }
