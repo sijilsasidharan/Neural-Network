@@ -24,5 +24,6 @@
 - Add envelop
 - Add World
 - Intersection of polygons
+- get random colors for polygon border
 
 ![alt text](images/phase-3.png)
