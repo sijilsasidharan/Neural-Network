@@ -35,6 +35,17 @@ class Polygon {
     }
     return intersections;
   }
+  containsPoint(point) {
+    let count = 0;
+    const outerPoint = new Node(-1000, -1000);
+    for (const edge of this.edges) {
+      const int = getIntersection(outerPoint, point, edge.p1, edge.p2);
+      if (int) {
+        count++;
+      }
+    }
+    return count % 2 == 1;
+  }
 
   drawSegments(ctx) {
     for (const edge of this.edges) {
