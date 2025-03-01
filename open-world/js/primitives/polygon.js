@@ -35,6 +35,16 @@ class Polygon {
     }
     return intersections;
   }
+
+  containsSegment(segment) {
+    for (const edge of this.edges) {
+      if (edge.intersects(segment)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   containsPoint(point) {
     let count = 0;
     const outerPoint = new Node(-1000, -1000);
