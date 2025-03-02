@@ -30,5 +30,8 @@ class World {
     for (const int of this.intersections) {
       int.draw(ctx, { color: "red", size: 6 });
     }
+    for (const road of this.roadBoarders) {
+      road.draw(ctx, { color: "white", size: 4 });
+    }
   }
 }
