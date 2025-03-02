@@ -6,6 +6,7 @@ class World {
 
     this.intersections = [];
     this.envolop = [];
+    this.roadBoarders = [];
     this.generate();
   }
 
@@ -19,6 +20,7 @@ class World {
       this.envolop[0].poly,
       this.envolop[1].poly
     );
+    this.roadBoarders = Polygon.union(this.envolop.map((env) => env.poly));
   }
 
   draw(ctx) {
