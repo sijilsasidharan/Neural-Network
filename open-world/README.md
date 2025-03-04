@@ -25,5 +25,6 @@
 - Add World
 - Intersection of polygons
 - get random colors for polygon border
+- add road boarders
 
 ![alt text](images/phase-3.png)
