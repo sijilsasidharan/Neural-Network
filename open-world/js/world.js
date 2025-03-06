@@ -25,7 +25,7 @@ class World {
 
   draw(ctx) {
     for (const env of this.envolop) {
-      env.draw(ctx, { fill: "#BBB", stroke: "#BBB" });
+      env.draw(ctx, { fill: "#BBB", stroke: "#BBB", lineWidth: 15 });
     }
     for (const int of this.intersections) {
       int.draw(ctx, { color: "red", size: 6 });
