@@ -26,6 +26,5 @@
 - Intersection of polygons
 - get random colors for polygon border
 - add road boarders
-- Read ME update
 
 ![alt text](images/phase-3.png)
